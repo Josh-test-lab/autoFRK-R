@@ -497,7 +497,7 @@ cMLEimat <- function(Fk,
   } else {
     L <- Fk %*% t((sqrt(d_hat) * t(P)) %*% inverse_square_root_matrix)
     if (ncol_Fk > 2) {
-      reduced_columns <- c(1, which(d_hat[2:ncol_Fk] > 0))
+      reduced_columns <- unique(c(1, which(d_hat[2:ncol_Fk] > 0)))
     } else {
       reduced_columns <- ncol_Fk
     }
